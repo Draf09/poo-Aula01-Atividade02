@@ -1,9 +1,10 @@
-public class carro {
+public class Carro {
 	
+	public static char[] toString;
 	private float quilometragem;
 	private float tanque, capacidade;
 	
-	public carro(int cpde) {
+	public Carro(int cpde) {
 		capacidade=cpde;
 	}
 	
@@ -41,6 +42,13 @@ public class carro {
 		    quilometragem+=kms;
 		    return kms;
 		}
+	}
+
+	public String toString(){
+		return "[" + "Kilometragem :" + getQuilometragem() 
+		+ getCapacidadeTanque()
+		+ getCombustivelRestante() +  
+		+ getOcupacaoTanque() + "]"; 
 	}
 	
 }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class principal {
 	
 	public static void main(String args []) {
-		carro pehDePano = new carro(65);
+		Carro pehDePano = new Carro(65);
 		Scanner input = new Scanner(System.in);
 		
 		int opcao=0;
@@ -11,12 +11,13 @@ public class principal {
 			System.out.println("Opcoes de operacao com o carro: ");
 			System.out.println("  1 - Odometro: ");
 			System.out.println("  2 - Capacidade do tanque (lts) ");
-			System.out.println("  3 - Qtde de combustivel disponÌvel (lts) ");
-			System.out.println("  4 - OcupaÁ„o do tanque de combustivel (%) ");
+			System.out.println("  3 - Qtde de combustivel dispon√≠vel (lts) ");
+			System.out.println("  4 - Ocupa√ß√£o do tanque de combustivel (%) ");
 			System.out.println("  5 - Abastecer o carro ");
 			System.out.println("  6 - Deslocar");
+			System.out.println("  7 - Imprimir dados do ve√≠culo ");
 			System.out.println("  0 - SAIR");
-			System.out.print("Informe a opc„o: ");
+			System.out.print( "Informe a op√ß√£o: ");
 			
 			opcao=input.nextInt();
 			if(opcao==0) break;
@@ -42,19 +43,24 @@ public class principal {
 				  break;
 			  case 6:
 				  if(pehDePano.getCombustivelRestante()==0) {
-					  System.out.println("6: TCHE.... MAS N√O TEM COMBUSTIVEL... ABASTECE PRIMEIRO:");
+					  System.out.println("6: TCHE.... MAS N√ÉO TEM COMBUSTIVEL... ABASTECE PRIMEIRO:");
 					  break;
 				  }
 				  System.out.print("6: Informe a qtde de kms a deslocar:");
 				  float kms=input.nextFloat();
 				  float deslocou=pehDePano.deslocar(kms);
 				  if(deslocou<kms)
-					  System.out.println("  CARRO PAROU NO CAMINHO... ABASTE«A");
+					  System.out.println("  CARRO PAROU NO CAMINHO... ABASTE√áA");
 				  else
 					  System.out.println("  CARRO CHEGOU AO DESTINO");
 				  break;
+			  case 7:
+				  System.out.println("  IMPRIMINDO INFORMA√ï√áES  ");
+				  System.out.println(pehDePano.toString());
+				  break;
+
 			  default:
-				  System.out.println("OPCAO INFORMADA N√O … V¡LIDA");
+				  System.out.println("OPCAO INFORMADA N√ÉO √â V√ÅLIDA");
 				  break;
 			}			
 		}
